@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios con Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Para el menú hamburguesa */
+    .menu-mobile {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .menu-mobile {
+        display: block;
+      }
+
+      .menu-desktop {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 font-sans text-gray-800">
+
+  <!-- Menú responsive (Hamburguesa) -->
+  <nav class="bg-blue-600 p-4">
+    <div class="flex justify-between items-center">
+      <div class="text-white text-xl font-semibold">Ejercicio 5 </div>
+
+      <!-- Menú para pantallas grandes -->
+      <div class="menu-desktop space-x-6 hidden md:flex">
+        <a href="#ejercicio1" class="text-white hover:bg-blue-700 py-2 px-4 rounded-lg transition">Ejercicio 1</a>
+        <a href="#ejercicio2" class="text-white hover:bg-blue-700 py-2 px-4 rounded-lg transition">Ejercicio 2</a>
+        <a href="#ejercicio3" class="text-white hover:bg-blue-700 py-2 px-4 rounded-lg transition">Ejercicio 3</a>
+        <a href="#ejercicio4" class="text-white hover:bg-blue-700 py-2 px-4 rounded-lg transition">Ejercicio 4</a>
+      </div>
+
+      <!-- Menú Hamburguesa (para pantallas pequeñas) -->
+      <div class="menu-mobile">
+        <button id="hamburger" class="text-white focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú desplegable para pantallas pequeñas -->
+    <div id="menuMobileLinks" class="bg-blue-600 text-white space-y-4 py-4 hidden">
+      <a href="#ejercicio1" class="block text-center py-2 px-4 hover:bg-blue-700 rounded-lg transition">Ejercicio 1</a>
+      <a href="#ejercicio2" class="block text-center py-2 px-4 hover:bg-blue-700 rounded-lg transition">Ejercicio 2</a>
+      <a href="#ejercicio3" class="block text-center py-2 px-4 hover:bg-blue-700 rounded-lg transition">Ejercicio 3</a>
+      <a href="#ejercicio4" class="block text-center py-2 px-4 hover:bg-blue-700 rounded-lg transition">Ejercicio 4</a>
+    </div>
+  </nav>
+
+  <!-- Contenido de los ejercicios -->
+  <div class="container mx-auto p-6">
+
+    <!-- Ejercicio 1: Botón interactivo -->
+    <section id="ejercicio1" class="mt-10">
+      <h2 class="text-3xl font-semibold mb-4">Ejercicio 1: Botón que cambia de color al pasar el cursor</h2>
+      <div class="flex justify-center">
+        <button class="bg-cyan-500 text-white py-2 px-4 rounded-lg transition duration-300 hover:bg-green-600">
+          Botón Interactivo
+        </button>
+      </div>
+    </section>
+
+    <!-- Ejercicio 2: Tarjeta de usuario -->
+    <section id="ejercicio2" class="mt-10">
+      <h2 class="text-3xl font-semibold mb-4">Ejercicio 2: Tarjeta de Usuario</h2>
+      <div class="flex justify-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-72">
+          <img src="img1.jpg"Imagen de Usuario" class="w-32 h-32 rounded-full mx-auto mb-4">
+          <h2 class="text-xl font-semibold text-center">Juan Pérez</h2>
+          <p class="text-gray-600 text-center mt-2">Soy un desarrollador web apasionado por las tecnologías y siempre en busca de nuevos retos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ejercicio 3: Layout con columnas -->
+    <section id="ejercicio3" class="mt-10">
+      <h2 class="text-3xl font-semibold mb-4">Ejercicio 3: Layout que cambia de una columna a dos</h2>
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-semibold">Columna 1</h3>
+            <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam cum in minus porro non distinctio esse vero vitae aliquid earum? </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-semibold">Columna 2</h3>
+            <p class="mt-2 text-gray-600">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore ab consequatur mollitia? Nulla numquam cupiditate quisquam exercitationem </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ejercicio 4: Formulario estilizado -->
+    <section id="ejercicio4" class="mt-10">
+      <h2 class="text-3xl font-semibold mb-4">Ejercicio 4: Formulario estilizado</h2>
+      <div class="flex justify-center">
+        <form class="bg-white p-8 rounded-lg shadow-lg w-96">
+          <h2 class="text-2xl font-semibold mb-6 text-center">Formulario de Contacto</h2>
+          <label for="nombre" class="block text-gray-700">Nombre</label>
+          <input type="text" id="nombre" name="nombre" class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+          
+          <label for="email" class="block text-gray-700 mt-4">Correo Electrónico</label>
+          <input type="email" id="email" name="email" class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+          
+          <label for="mensaje" class="block text-gray-700 mt-4">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+          
+          <button type="submit" class="w-full bg-blue-500 text-white py-3 mt-6 rounded-lg hover:bg-blue-700 transition duration-300">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Script para mostrar y ocultar el menú en pantallas pequeñas
+    const hamburger = document.getElementById('hamburger');
+    const menuMobileLinks = document.getElementById('menuMobileLinks');
+
+    hamburger.addEventListener('click', () => {
+      menuMobileLinks.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+
+</html>
